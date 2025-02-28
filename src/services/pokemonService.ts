@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { PokemonListResponse } from '../models/Pokemon.model';
 
 const BASE_URL = 'https://pokeapi.co/api/v2/';
 
@@ -26,7 +27,7 @@ export const getPokemonById = async (id: number) => {
     }
 };
 
-export const getPokemonList = async (limit: number = 20, offset: number = 0) => {
+export const getPokemonList = async (limit: number = 20, offset: number = 0): Promise<PokemonListResponse> => {
     try {
         const response = await pokemonApi.get('pokemon', {
             params: {
@@ -34,7 +35,7 @@ export const getPokemonList = async (limit: number = 20, offset: number = 0) => 
                 offset,
             },
         });
-        return response.data;
+        return response.data ?? [];
     } catch (error) {
         console.error('Error fetching Pokemon list:', error);
         throw error;

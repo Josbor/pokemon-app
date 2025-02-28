@@ -1,3 +1,34 @@
+
+/**
+ * # Pokemon App
+ * 
+ * This project is a React application set up with TypeScript and Vite. It includes configurations for Hot Module Replacement (HMR) and ESLint rules to ensure code quality.
+ * 
+ * ## Features
+ * - Uses Vite for fast development and build processes.
+ * - Supports React with TypeScript for type-safe development.
+ * - Configured with ESLint for code linting and style enforcement.
+ * - Includes plugins for React-specific linting rules.
+ * 
+ * ## ESLint Configuration
+ * - The ESLint configuration can be expanded to enable type-aware lint rules.
+ * - Recommended to use `@vitejs/plugin-react` or `@vitejs/plugin-react-swc` for Fast Refresh.
+ * - Additional plugins like `eslint-plugin-react-x` and `eslint-plugin-react-dom` can be installed for more specific linting rules.
+ * 
+ * ## Getting Started
+ * - Clone the repository.
+ * - Install dependencies using `npm install` or `yarn install`.
+ * - Start the development server using `npm run dev` or `yarn dev`.
+ * 
+ * ## File Structure
+ * - `src/`: Contains the source code of the application.
+ * - `public/`: Contains static assets.
+ * - `eslint.config.js`: ESLint configuration file.
+ * - `tsconfig.json`: TypeScript configuration file.
+ * 
+ * ## Contributing
+ * Contributions are welcome! Please open an issue or submit a pull request.
+ */
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
