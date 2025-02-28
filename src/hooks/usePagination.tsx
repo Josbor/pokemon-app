@@ -29,14 +29,60 @@ const usePagination = (items: Pokemon[], itemsPerPage: number = 20) => {
         setCurrentPage(totalPages);
     };
 
+    const styles = {
+        container: "flex items-center justify-between",
+        infoText: "text-sm text-gray-500",
+        buttonContainer: "flex items-center space-x-2",
+        button: "inline-flex items-center px-3 py-1 border border-gray-300 text-sm rounded-md",
+        disabledButton: "bg-gray-100 text-gray-400 cursor-not-allowed",
+        enabledButton: "bg-white text-gray-700 hover:bg-gray-50",
+        pageInfo: "text-sm text-gray-700",
+    };
+
+    const PaginationControls = () => (
+        <div className={styles.container}>
+            <div className={styles.infoText}>
+                Mostrando {currentItems.length} de {items.length} Pokémon
+            </div>
+            <div className={styles.buttonContainer}>
+                <button
+                    onClick={goToFirstPage}
+                    disabled={currentPage === 1}
+                    className={`${styles.button} ${currentPage === 1 ? styles.disabledButton : styles.enabledButton}`}
+                >
+                    First
+                </button>
+                <button
+                    onClick={goToPreviousPage}
+                    disabled={currentPage === 1}
+                    className={`${styles.button} ${currentPage === 1 ? styles.disabledButton : styles.enabledButton}`}
+                >
+                    Previous
+                </button>
+                <span className={styles.pageInfo}>
+                    Página {currentPage} de {totalPages}
+                </span>
+                <button
+                    onClick={goToNextPage}
+                    disabled={currentPage === totalPages}
+                    className={`${styles.button} ${currentPage === totalPages ? styles.disabledButton : styles.enabledButton}`}
+                >
+                    Next
+                </button>
+                <button
+                    onClick={goToLastPage}
+                    disabled={currentPage === totalPages}
+                    className={`${styles.button} ${currentPage === totalPages ? styles.disabledButton : styles.enabledButton}`}
+                >
+                    Last
+                </button>
+            </div>
+        </div>
+    );
+
     return {
-        currentPage,
-        totalPages,
         currentItems,
-        goToNextPage,
-        goToPreviousPage,
-        goToFirstPage,
-        goToLastPage,
+        PaginationControls
     };
 };
 

@@ -7,14 +7,18 @@ const useAlphabetCounts = (pokemonList:Pokemon[]) => {
 
 
     useEffect(() => {
-        const counts: Record<string, number> = {}
-        pokemonList.forEach((pokemon) => {
-          const firstLetter = pokemon.name.charAt(0).toLowerCase()
-          counts[firstLetter] = (counts[firstLetter] || 0) + 1
-        })
-  
-        setAlphabetCounts(counts)
-    }, []);
+            const lettersPokemon: Record<string, number> = pokemonList.reduce((accumulator, pokemon) => {
+            const firstLetter = pokemon.name.charAt(0).toLowerCase();
+            if (accumulator[firstLetter]) {
+            accumulator[firstLetter] += 1;
+            } else {
+            accumulator[firstLetter] = 1;
+            }
+            return accumulator;
+        }, {} as Record<string, number>);
+
+        setAlphabetCounts(lettersPokemon)
+    }, [pokemonList]);
 
     return alphabetCounts;
 };

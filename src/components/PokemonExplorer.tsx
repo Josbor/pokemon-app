@@ -15,7 +15,7 @@ export function PokemonExplorer({ pokemonList}:PokemonExplorerProps) {
   const [selectedPokemon, setSelectedPokemon] = useState<string | null>(null)
   const alphabetCounts = useAlphabetCounts( pokemonList )
   const{searchTerm,setSearchTerm,suggestions}= usePokemonSearch(pokemonList)
-  const {currentItems} =usePagination(pokemonList,10)
+  const {currentItems,PaginationControls} =usePagination(pokemonList)
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([])  
  
   useEffect(() => {
@@ -24,13 +24,14 @@ export function PokemonExplorer({ pokemonList}:PokemonExplorerProps) {
       return}
     setFilteredPokemon(pokemonList.filter((pokemon) => pokemon.name.toLowerCase().includes(selectedPokemon?.toLowerCase() || '')))
   },[searchTerm])
-  
+
   return (
         <div className="space-y-8">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
         <Searcher onSelectPokemon={setSelectedPokemon} searchTerm={searchTerm} setSearchTerm={setSearchTerm} suggestions={suggestions} />
         <TableList pokemonList={filteredPokemon.length?filteredPokemon:currentItems} onSelectPokemon={setSelectedPokemon} />
+        <PaginationControls />
         </div>
         <div>
           <PokemonDetails pokemonName={selectedPokemon} />
