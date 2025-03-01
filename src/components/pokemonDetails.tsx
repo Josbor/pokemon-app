@@ -3,7 +3,8 @@ import { Ability } from "../models/Pokemon.model"
 
 
 interface PokemonDetailProps {
-    pokemonName: string | null
+    pokemonName: string | null;
+    windowSize: { width: number; height: number };
 }
 
 const classes = {
@@ -95,7 +96,7 @@ export default function PokemonDetail({ pokemonName }: PokemonDetailProps) {
                 <div className={classes.imageContainer}>
                     {pokemon.sprites.other?.["official-artwork"]?.front_default ? (
                         <img
-                            src={pokemon.sprites.other["official-artwork"].front_default || "/placeholder.svg"}
+                            src={pokemon.sprites.other["official-artwork"].front_default }
                             alt={pokemon.name}
                             width={200}
                             height={200}
@@ -103,7 +104,7 @@ export default function PokemonDetail({ pokemonName }: PokemonDetailProps) {
                         />
                     ) : (
                         <img
-                            src={pokemon.sprites.front_default || "/placeholder.svg?height=200&width=200"}
+                            src={pokemon.sprites.front_default }
                             alt={pokemon.name}
                             width={120}
                             height={120}
