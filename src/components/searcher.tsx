@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import {  useEffect, useRef, useState } from 'react';
 import { Pokemon } from '../models/Pokemon.model';
 import { Eraser, Search } from 'lucide-react';
 
@@ -20,7 +20,7 @@ interface SearcherProps {
     searchPokemon:(value: string) => void
 }
 
-const Searcher: FC<SearcherProps> = ({ searchTerm,setSearchTerm,suggestions,onSelectPokemon,searchPokemon }) => {
+const Searcher = ({ searchTerm,setSearchTerm,suggestions,onSelectPokemon,searchPokemon }:SearcherProps) => {
     const [open, setOpen] = useState(false)
     const popoverRef = useRef<HTMLDivElement>(null)
         const handleSuggestionClick = (name:string) => {

@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { Pokemon } from "../models/Pokemon.model";
-import AlphabetSummary from "./AlphabetSummaryProps";
-import PokemonDetails from "./PokemonDetails";
-import Searcher from "./Searcher";
-import TableList from "./TableList";
-import useAlphabetCounts from "../hooks/useAlphabetCounts";
 import { usePokemonSearch } from "../hooks/usePokemonSearch";
+import useAlphabetCounts from "../hooks/useAlphabetCounts";
 import usePagination from "../hooks/usePagination";
 import useResponsive from "../hooks/useResponsive";
+import AlphabetSummary from "./AlphabetSummary";
+import TableList from "./TableList";
+import PokemonDetails from "./Details";
+import Searcher from "./searcher";
 
 interface PokemonExplorerProps {
   pokemonList: Pokemon[];
 }
-export function PokemonExplorer({ pokemonList}:PokemonExplorerProps) {
+export const  Explorer =({ pokemonList}:PokemonExplorerProps)=> {
   const [selectedPokemon, setSelectedPokemon] = useState<string | null>(null)
   const alphabetCounts = useAlphabetCounts( pokemonList )
   const{searchTerm,setSearchTerm,suggestions}= usePokemonSearch(pokemonList)

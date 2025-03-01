@@ -38,7 +38,7 @@ const classes = {
     abilityBadge: "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 capitalize"
 }
 
-export default function PokemonDetail({ pokemonName }: PokemonDetailProps) {
+ const Details =({ pokemonName }: PokemonDetailProps) => {
     const { pokemon, isLoading, error } = usePokemonDetails(pokemonName)
 
     if (!pokemonName) {
@@ -157,3 +157,4 @@ export default function PokemonDetail({ pokemonName }: PokemonDetailProps) {
         </div>
     )
 }
+export default Details
