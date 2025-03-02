@@ -7,7 +7,7 @@ import useResponsive from "../hooks/useResponsive";
 import AlphabetSummary from "./AlphabetSummary";
 import TableList from "./TableList";
 import PokemonDetails from "./Details";
-import Searcher from "./searcher";
+import Searcher from "./Searcher";
 
 interface PokemonExplorerProps {
   pokemonList: Pokemon[];
