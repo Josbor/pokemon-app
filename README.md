@@ -1,11 +1,11 @@
-# Pokémon App
+# Pokemon App
 
-Este es un proyecto de una aplicación de Pokémon que permite a los usuarios buscar y ver información sobre diferentes Pokémon.
+Este es un proyecto de una aplicación de Pokemon que permite a los usuarios buscar y ver información sobre diferentes Pokemon.
 
 ## Características
 
-- Buscar Pokémon por nombre.
-- Ver detalles de cada Pokémon, incluyendo estadísticas, habilidades y tipos.
+- Buscar Pokemon por nombre.
+- Ver detalles de cada Pokemon, incluyendo estadísticas, habilidades y tipos.
 - Interfaz de usuario amigable y fácil de usar.
 
 ## Instalación
@@ -29,7 +29,9 @@ Este es un proyecto de una aplicación de Pokémon que permite a los usuarios bu
   ```bash
   npm run dev
   ```
-2. Abre tu navegador y ve a `http://localhost:3000` para ver la aplicación en funcionamiento.
+2. Abre tu navegador y ve a `http://localhost:5173/` o la direccion sugerida en consola para ver la aplicación en funcionamiento.
+
+
 
 ## Contacto
 
