@@ -35,7 +35,7 @@ Este es un proyecto de una aplicación de Pokemon que permite a los usuarios bus
 
 ## Contacto
 
-Para cualquier consulta, puedes contactarme en [josbo.dev@gmail.com](mailto:josbo.dev@gmail.com).
+Para cualquier consulta, puedes contactarme en [josbor.dev@gmail.com](mailto:josbor.dev@gmail.com).
 
 ## Autor
 
